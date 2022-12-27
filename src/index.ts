@@ -8,11 +8,13 @@ interface Err {
 }
 
 mongoose
-  .connect("mongodb://localhost/erp_system")
+  .connect("mongodb+srv://erp_system:erp1234@cluster0.jqooqxr.mongodb.net/?retryWrites=true&w=majority")
   .then(() => console.log("Connected to MongoDB..."))
   .catch((err: Err) =>
     console.error("Could not connect to MongoDB...", err.message)
   );
+
+  
 app.use(cors());
 app.use(express.json());
 app.use("/employees", employees);
